@@ -1,0 +1,21 @@
+$font_base_size: 16 !default;
+
+@function perc($target, $context:1000px) {
+  @return ($target / $context) * 100%;
+}
+
+@function em($target, $context:$font_base_size) {
+  @return ($target / $context) + 0em;
+}
+
+@function px($target) {
+  @return $target + 0px;
+}
+
+@mixin user-select($select) {
+  -moz-user-select: -moz-#{$select};
+  -khtml-user-select: $select;
+  -webkit-user-select: $select;
+  -o-user-select: $select;
+  user-select: $select;
+}

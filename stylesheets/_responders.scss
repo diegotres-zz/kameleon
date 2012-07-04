@@ -1,0 +1,91 @@
+$kameleon_breakpoint_mobile      : 0px  !default;
+$kameleon_breakpoint_mobile_wide : 50px !default;
+$kameleon_breakpoint_tablet      : 55px !default;
+$kameleon_breakpoint_tablet_wide : 60px !default;
+$kameleon_breakpoint_desktop     : 65px !default;
+$faraway                         : 9999999px;
+
+//$fix-from-tablet: false !default;
+//$fix-to-desktop: false !default;
+
+$kameleon_breakpoint_from: desktop !default;
+$kameleon_breakpoint_to: desktop !default;
+
+
+@function get_breakpoint($device) {
+  @if $device == mobile      { @return $kameleon_breakpoint_mobile; }
+  @if $device == mobile_wide { @return $kameleon_breakpoint_mobile_wide; }
+  @if $device == tablet      { @return $kameleon_breakpoint_tablet; }
+  @if $device == tablet_wide { @return $kameleon_breakpoint_tablet_wide; }
+  @if $device == desktop     { @return $kameleon_breakpoint_desktop; }
+}
+
+@function get_next_breakpoint($device) {
+  @if $device == mobile      { @return $kameleon_breakpoint_mobile_wide; }
+  @if $device == mobile_wide { @return $kameleon_breakpoint_tablet; }
+  @if $device == tablet      { @return $kameleon_breakpoint_tablet_wide; }
+  @if $device == tablet_wide { @return $kameleon_breakpoint_desktop; }
+  @if $device == desktop     { @return $faraway; }
+}
+
+@mixin respond_all($from:mobile, $to:desktop) {
+  @if $from == mobile and $to == desktop and $kameleon_breakpoint_from == mobile {
+    @content;
+  }
+  @elseif $from == $kameleon_breakpoint_from and $to == $kameleon_breakpoint_to {
+//    @media only screen and (min-width: get_breakpoint($from)+1) and (max-width: get_next_breakpoint($to)) { 
+      @content;
+//    }
+  }
+}
+
+@mixin respond_from($from:mobile, $to:desktop) {
+  @if $from == mobile and $to == desktop and $kameleon_breakpoint_from == mobile {
+    @content;
+  }
+  @elseif $from == $kameleon_breakpoint_from and $to == $kameleon_breakpoint_to {
+//    @media only screen and (min-width: get_breakpoint($from)+1) and (max-width: get_next_breakpoint($to)) { 
+      @content;
+//    }
+  }
+}
+
+@mixin respond_only($only:desktop) {
+  @if ($only == $kameleon_breakpoint_from) {
+    @media only screen and (min-width: get_breakpoint($only)+1) and (max-width: get_next_breakpoint($only)) { 
+      @content;
+    }
+  }
+}
+
+
+@mixin respond_controller($from:$kameleon_breakpoint_from, $to:desktop) {
+  @if $from == mobile {
+    @content;
+  }
+  @elseif $from == $kameleon_breakpoint_from and $to == $kameleon_breakpoint_to {
+    @media only screen and (min-width: get_breakpoint($from)+1) and (max-width: get_next_breakpoint($to)) { 
+      @content;
+    }
+  }
+}
+
+
+//@mixin mq_from($from:mobile, $to:desktop) {
+//  @if $from == mobile and $to == desktop and $kameleon_breakpoint_from == mobile {
+//    @content;
+//  }
+//  @elseif $from == $kameleon_breakpoint_from and $to == $kameleon_breakpoint_to {
+//    @media only screen and (min-width: get_breakpoint($from)+1) and (max-width: get_next_breakpoint($to)) { 
+//      @content;
+//    }
+//  }
+//}
+//
+//@mixin mq_only($only:desktop) {
+//  @if ($only == $kameleon_breakpoint_from) {
+//    @media only screen and (min-width: get_breakpoint($only)+1) and (max-width: get_next_breakpoint($only)) { 
+//      @content;
+//    }
+//  }
+//}

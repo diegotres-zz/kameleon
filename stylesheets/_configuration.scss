@@ -1,0 +1,101 @@
+// ============================================================================
+// Configuration
+// ============================================================================
+
+// typography
+// ----------------------------------------------------------------------------
+$font_base_size: 15;
+$font_light    : 300;
+$font_regular  : 400;
+$font_semibold : 600;
+$font_bold     : 700;
+
+// grid
+// ----------------------------------------------------------------------------
+$column-width : 54px;
+$gutter-width : 30px;
+$columns      : 12;
+$total-width  : 100%;
+$max-width    : 948; // px
+//$max-width    : 1011; // px
+
+// breakpoints
+// ----------------------------------------------------------------------------
+$kameleon_breakpoint_mobile      : 0px;
+$kameleon_breakpoint_mobile_wide : 400px;
+$kameleon_breakpoint_tablet      : 600px;
+$kameleon_breakpoint_tablet_wide : 998px;
+$kameleon_breakpoint_desktop     : 1024px;
+
+
+// sizes
+// ----------------------------------------------------------------------------
+$margin       : 22;
+$margin_small : 12;
+
+$header_height   : 72;
+$main_nav_height : 60;
+
+$default_size_tiny  : 5;
+$default_size_small : 10;
+$default_size_medium: 20;
+$default_size_large : 40;
+
+// colors
+// ----------------------------------------------------------------------------
+$gray_light_background  : #f9f9f9;
+$gray_background_opaque : #ececec;
+$gray_background        : rgba(0,0,0,0.075);
+$gray_border            : #e4e4e4;
+$gray_light             : #999;
+$gray_medium            : #666;
+$gray_dark              : #444;
+$gray                   : $gray_dark;
+
+$blue_light             : #5d92fb;
+$blue_dark              : #3369e8;
+$blue                   : $blue_dark;
+
+$white                  : #ffffff;
+$black                  : #000000;
+$red                    : #d60f25;
+$green                  : #009924;
+
+
+
+
+// resources
+// ----------------------------------------------------------------------------
+//// small icons
+//$base_products_icons: 'products_icons_default/';
+//$products_icons: sprite-map("#{$base_products_icons}*.png");
+//
+//// large icons
+//$base_products_icons_large: 'products_icons_large/';
+//$products_icons_large: sprite-map("#{$base_products_icons_large}*.png");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

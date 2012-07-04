@@ -1,0 +1,44 @@
+
+
+head { 
+  // current
+  font-family: mobile; min-width: 0; max-width: $kameleon_breakpoint_mobile_wide;
+  // mobile
+  padding-left: 0; padding-right: $kameleon_breakpoint_mobile_wide;
+  // mobile_wide
+  line-height: $kameleon_breakpoint_mobile_wide+1; font-size: $kameleon_breakpoint_tablet;
+  // tablet
+  margin-left: $kameleon_breakpoint_tablet+1; margin-right: $kameleon_breakpoint_tablet_wide;
+  // tablet_wide
+  margin-bottom: $kameleon_breakpoint_tablet_wide+1; margin-top: $kameleon_breakpoint_desktop;
+  // desktop
+  padding-bottom: $kameleon_breakpoint_desktop+1; padding-top: $faraway;
+}
+
+
+// mobile
+@media all and (min-width: 0)                                  { head { font-family: mobile;      min-width:0;                                  max-width: $kameleon_breakpoint_mobile_wide } }
+// mobile_wide
+@media all and (min-width: $kameleon_breakpoint_mobile_wide+1) { head { font-family: mobile_wide; min-width:$kameleon_breakpoint_mobile_wide+1; max-width: $kameleon_breakpoint_tablet } }
+// tablet
+@media all and (min-width: $kameleon_breakpoint_tablet+1)      { head { font-family: tablet;      min-width:$kameleon_breakpoint_tablet+1;      max-width: $kameleon_breakpoint_tablet_wide } }
+// tablet_wide
+@media all and (min-width: $kameleon_breakpoint_tablet_wide+1) { head { font-family: tablet_wide; min-width:$kameleon_breakpoint_tablet_wide+1; max-width: $kameleon_breakpoint_desktop } }
+// desktop
+@media all and (min-width: $kameleon_breakpoint_desktop+1)     { head { font-family: desktop;     min-width:$kameleon_breakpoint_desktop+1;     max-width: $faraway; } }
+
+
+
+// ALTERAR ESSES MIXINS ABAIXO PARA OS NOVOS!!!
+//@mixin respond_only($screen_size) {
+//  @if      $screen_size == mobile_or_larger      {                                                                                                                              @content; }
+//  @if      $screen_size == mobile                { @media only screen and (max-width: $kameleon_breakpoint_mobile_wide)                                                       { @content; } }
+//  @else if $screen_size == mobile_wide_or_larger { @media only screen and (min-width: $kameleon_breakpoint_mobile_wide + 1)                                                   { @content; } }
+//  @else if $screen_size == mobile_wide           { @media only screen and (min-width: $kameleon_breakpoint_mobile_wide + 1) and (max-width: $kameleon_breakpoint_tablet)      { @content; } }
+//  @else if $screen_size == tablet_or_larger      { @media only screen and (min-width: $kameleon_breakpoint_tablet      + 1)                                                   { @content; } }
+//  @else if $screen_size == tablet                { @media only screen and (min-width: $kameleon_breakpoint_tablet      + 1) and (max-width: $kameleon_breakpoint_tablet_wide) { @content; } }
+//  @else if $screen_size == tablet_wide_or_larger { @media only screen and (min-width: $kameleon_breakpoint_tablet_wide + 1)                                                   { @content; } }
+//  @else if $screen_size == tablet_wide           { @media only screen and (min-width: $kameleon_breakpoint_tablet_wide + 1) and (max-width: $kameleon_breakpoint_desktop)     { @content; } }
+//  @else if $screen_size == desktop               { @media only screen and (min-width: $kameleon_breakpoint_desktop     + 1)                                                   { @content; } }
+//  @else if $screen_size == desktop_or_larger     { @media only screen and (min-width: $kameleon_breakpoint_desktop     + 1)                                                   { @content; } }
+//}

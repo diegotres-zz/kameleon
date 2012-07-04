@@ -1,0 +1,100 @@
+@include respond_controller {*{}
+
+  // BASE
+  // ==========================================================================
+  @include respond_all {*{}
+    .video_holder {
+      @include column(12);
+      text-align: center;
+
+      iframe {
+        margin: 0 auto !important;
+      }
+    }
+
+    // responsive media
+    .media_container {
+      display: block;
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+
+      img,
+      embed,
+      object,
+      video,
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+
+    .fluid_image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .fluid_image_portrait {
+      display: block;
+      position: relative;
+      padding-bottom: 100%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+
+
+    .ie7 {
+      img { -ms-interpolation-mode:bicubic; }
+    }
+  }
+
+  // MOBILE WIDE
+  // ==========================================================================
+  @include respond_from(mobile_wide) {*{}
+
+  }
+
+  // TABLET
+  // ==========================================================================
+  @include respond_from(tablet) {*{}
+
+  }
+
+  // TABLET WIDE
+  // ==========================================================================
+  @include respond_from(tablet_wide) {*{}
+
+  }
+
+  // DESKTOP
+  // ==========================================================================
+  @include respond_from(desktop) {*{}
+
+  }
+}
+
+
+
+
+
+
+
+
+
